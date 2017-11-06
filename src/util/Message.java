@@ -1,17 +1,13 @@
 package util;
 
 import java.text.SimpleDateFormat;
-import java.util.LinkedList;
 import java.util.Map;
-import java.util.Vector;
 import java.util.concurrent.ConcurrentHashMap;
 
 import javax.swing.DefaultListModel;
 import javax.swing.JTextPane;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
-
-import dao.UserDao;
 
 public class Message {
 	public static final int MESSAGE=1;//1代表消息
@@ -77,12 +73,7 @@ public class Message {
 				ShowDialog.showErrorMessage("用户列表页面出现问题");
 			}
 			break;
-		case LOGIN:
-			if(UserDao.login(s[1], s[2]))
-				return s[1];
-		case REGISTER:
-			System.out.println(s[1]+":"+s[2]);
-			break;
+		
 		case TOMESSAGE:
 			JTextPane jtp = null;
 			for(String n:chat.keySet())
